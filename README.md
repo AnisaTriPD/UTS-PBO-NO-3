@@ -1,3 +1,9 @@
+package utsprojectno3; import java.awt.HeadlessException; import java.text.DecimalFormat; import javax.swing.JOptionPane; /** *
+
+@author ACER */ public class Utsprojectno3 {
+
+public static abstract class BankAccount { protected double balance; protected int numberOfDeposits; protected int numberOfWithdrawals; protected double annualInterest; protected double monthlyCharge;
+
 // Constructor accepts annual interest and // the balance. public BankAccount(double balance, double annualInterest) { this.setAnnualInterest(annualInterest); this.setBalance(balance); } // Default constructor. public BankAccount() {}
 
 // Monthly charge process.
@@ -196,3 +202,4 @@ private static void errorMsg() {
     output = "Error: There was an error with your entry"; 
     JOptionPane.showMessageDialog(null, output); 
 } 
+}
