@@ -1,26 +1,3 @@
-package utsprojectno3; import java.awt.HeadlessException; import java.text.DecimalFormat; import javax.swing.JOptionPane; /** *
-
-@author ACER */ public class Utsprojectno3 {
-
-public static abstract class BankAccount { protected double balance; protected int numberOfDeposits; protected int numberOfWithdrawals; protected double annualInterest; protected double monthlyCharge;
-
-// Constructor accepts annual interest and // the balance. public BankAccount(double balance, double annualInterest) { this.setAnnualInterest(annualInterest); this.setBalance(balance); } // Default constructor. public BankAccount() {}
-
-// Monthly charge process.
-public void monthlyProcess() { this.balance -= this.monthlyCharge; this.calcInterest(); this.monthlyCharge = 0; this.numberOfDeposits = 0; this.numberOfWithdrawals = 0; }
-
-// Calculate the interest. protected void calcInterest() { double monthlyInterestRate; double monthlyInterest;
-
-    monthlyInterestRate = this.annualInterest / 12; 
-    monthlyInterest = this.balance * monthlyInterestRate; 
-    this.balance = this.balance + monthlyInterest;  
-} 
-// Withdraw. public boolean withdraw(double amount) { if ((this.balance > amount) && (amount > 0)) { this.balance -= amount; this.numberOfWithdrawals++; return true; } else { return false; } }
-
-// Deposit public boolean deposit(double amount) { if (amount > 0) { this.balance += amount; this.numberOfDeposits++; return true; } else { return false; } }
-
-// Accessors and mutators. public double getBalance() { return balance; }
-
 public void setBalance(double balance) { 
     this.balance = balance; 
 } 
